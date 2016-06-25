@@ -3,13 +3,14 @@
  * https://github.com/jhabdas/react-native-webpack-starter-kit
  */
 import React from 'react'
-import { AppRegistry } from 'react-native'
-import App from './components/App'
+import TickTackToe from './components/tickTackToe'
 
-const instructions = 'Press Cmd+R to reload,\nCmd+D or shake for dev menu'
+import {
+	AppRegistry
+} from 'react-native'
 
 const Root = () => (
-  <App instructions={instructions} />
+	<TickTackToe />
 )
 
 AppRegistry.registerComponent('App', () => Root)

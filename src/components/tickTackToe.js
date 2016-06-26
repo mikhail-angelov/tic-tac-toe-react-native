@@ -8,28 +8,27 @@ import {
 } from 'react-native'
 import Field from './field'
 import ResetButton from './ResetButton'
-import Game from './game'
 
-var styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-});
+const appStyles =  {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+}
 
 class TickTackToe extends Component {
  
     constructor(props) {
         super(props);
-        this.game = new Game();
+        this.game = this.props.game;
 
         this.state = this.game.getModel();
     }
 
     onClick(index){
-        this.game.makeTurn(index);
-        this.setState(this.game.getModel());
+        if(!this.state.status){
+            this.game.makeTurn(index);
+            this.setState(this.game.getModel());
+        }
     }
 
     onReset(){
@@ -43,12 +42,12 @@ class TickTackToe extends Component {
             label = (<Text>{this.state.status}</Text>)
         }
         return (
-            <View style={styles.container}>
+            <View style={appStyles}>
                 {label}
                 <Field onclick={this.onClick.bind(this)} model={this.state.model}/>
                 <ResetButton onReset={this.onReset.bind(this)} />
             </View>
-        );
+        )
     }
 }
 

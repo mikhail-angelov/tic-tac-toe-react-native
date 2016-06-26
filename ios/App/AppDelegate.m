@@ -31,8 +31,8 @@
    * on the same Wi-Fi network.
    */
 
-  jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.43:8080/index.ios.bundle?platform=ios&dev=true"];
-  //jsCodeLocation = [NSURL URLWithString:@"http://192.168.2.9:8080/index.ios.bundle?platform=ios&dev=true"];
+//  jsCodeLocation = [NSURL URLWithString:@"http://192.168.1.43:8080/index.ios.bundle?platform=ios&dev=true"];
+  jsCodeLocation = [NSURL URLWithString:@"http://192.168.2.9:8080/index.ios.bundle?platform=ios&dev=true"];
   /**
    * OPTION 2
    * Load from pre-bundled file on disk. To re-generate the static bundle
